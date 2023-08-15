@@ -1,0 +1,63 @@
+*
+{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body
+{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container
+{
+    position: relative;
+    height: 220px;
+    width: 220px;
+}
+
+.container >div
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 5s linear infinite;
+    animation-delay:calc(0.15s*var(--i));
+}
+@keyframes rotate {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(720deg);
+    }
+}
+
+.small
+{
+    position: absolute;
+    width:2px;
+    height:2px;
+    border-radius: 50%;
+    background-color: rgb(237, 125, 4);
+    animation: resize 2s linear infinite;
+    animation-delay: calc(0.15s*var(--i));
+}
+@keyframes resize {
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }
+    90%
+    {
+        transform: scale(30);
+        filter: hue-rotate(360deg);
+    }
+    
+}
